@@ -1,0 +1,44 @@
+.dt{
+    height: 77vh;
+}
+
+.box1{
+    background-image : url(../../pic/pic1.jpeg);
+    filter: blur(5px);
+    background-size:cover;
+}
+.box2{
+    background-image : url(../../pic/pic2.jpeg);
+    filter: blur(5px);
+    background-size:cover;
+}
+.box3{
+    background-image : url(../../pic/pic3.jpeg);
+    filter: blur(5px);
+    background-size:cover;
+}
+.box1:hover{
+    filter:blur(0);
+}
+.box2:hover{
+    filter:blur(0);
+}
+.box3:hover{
+    filter:blur(0);
+}
+
+.title{
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
