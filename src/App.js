@@ -5,7 +5,8 @@ import Footer from './components/footer/Footer';
 import Signin from "./components/signin/signin";
 import Singup from "./components/signin/signup";
 import About from "./components/about/about";
-import trainee_header from "./trainee_page/trainee_header";
+import Admin from "./components/admin/Admin";
+import ViewAllTrainers from "./trainer_page/ViewAllTrainers";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
           <Route path="/signin" element={<Signin/>}/>
           <Route path="/signup" element={<Singup/>}/>
           <Route path="/about" element={<About/>}/>
+          <Route path="/admin" element={<Admin/>}/>
+          <Route path="/admin/trainers" element={<ViewAllTrainers/>}/>
         </Routes> 
         <Footer></Footer>
       </Router>

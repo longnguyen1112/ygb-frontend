@@ -13,7 +13,7 @@ const Header = () => {
           <a class="f6 f5-l link bg-animate black-80 hover-bg-light-gray dib pa3 ph4-l" href="/about">About</a>
           <a class="f6 f5-l link bg-animate black-80 hover-bg-light-gray dib pa3 ph4-l" href="/signin">Login</a>
           <a class="f6 f5-l link bg-animate black-80 hover-bg-light-gray dib pa3 ph4-l" href="/signup">Register</a>
-          <a class="f6 f5-l link bg-animate black-80 hover-bg-light-gray dib pa3 ph4-l" href="/contact">Contact</a>
+          <a class="f6 f5-l link bg-animate black-80 hover-bg-light-gray dib pa3 ph4-l" href="/admin">Admin</a>
         </nav>
       </header>
     </div>
