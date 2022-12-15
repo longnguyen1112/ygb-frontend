@@ -17,12 +17,14 @@ export default class ViewAllTrainers extends Component {
       TrainerService.deleteTrainer(id).then( res => {
           this.setState({trainers: this.state.trainers.filter(trainers => trainers.id !== id)});
       });
+      window.location.href = "/admin/trainers";
     }
     viewTrainer(id){
-        this.props.history.push(`/view-employee/${id}`);
+      window.location.href = `/admin/view/${id}`;
     }
     editTrainer(id){
-        this.props.history.push(`/add-employee/${id}`);
+        //this.props.history.push(`/update/${id}`);
+        window.location.href = `/admin/update/${id}`;
     }
 
     componentDidMount(){
@@ -35,7 +37,6 @@ export default class ViewAllTrainers extends Component {
     return (
       <div>
         <h2 className="tc mt3">Trainers List</h2>
-        <br></br>
         <div className = "ph4 pb4">
           <div className = "overflow-auto">
               <table className = "f5 w-100 mw8 center" cellspacing="0">
@@ -43,23 +44,25 @@ export default class ViewAllTrainers extends Component {
                       <tr>
                           <th className="fw6 bb b--black-20 tl pb3 pr3 bg-white"> First Name</th>
                           <th className="fw6 bb b--black-20 tl pb3 pr3 bg-white"> Last Name</th>
-                          <th className="fw6 bb b--black-20 tl pb3 pr3 bg-white"> Age</th>
                           <th className="fw6 bb b--black-20 tl pb3 pr3 bg-white"> Gender</th>
+                          <th className="fw6 bb b--black-20 tl pb3 pr3 bg-white"> Age</th>
                           <th className="fw6 bb b--black-20 tl pb3 pr3 bg-white"> Certificate</th>
                       </tr>
                   </thead>
                   <tbody className="lh-copy">
                       {
-                          this.state.employees.map(
-                              employee => 
-                              <tr key = {employee.id}>
-                                    <td className="pv3 pr3 bb b--black-20"> { employee.firstName} </td>   
-                                    <td className="pv3 pr3 bb b--black-20"> {employee.lastName}</td>
-                                    <td className="pv3 pr3 bb b--black-20"> {employee.emailId}</td>
-                                    <td className="pv3 pr3 bb b--black-20">
-                                        <button onClick={ () => this.editEmployee(employee.id)} className="btn btn-info">Update </button>
-                                        <button style={{marginLeft: "10px"}} onClick={ () => this.deleteEmployee(employee.id)} className="btn btn-danger">Delete </button>
-                                        <button style={{marginLeft: "10px"}} onClick={ () => this.viewEmployee(employee.id)} className="btn btn-info">View </button>
+                          this.state.trainers.map(
+                              trainer => 
+                              <tr key = {trainer.trainer_id}>
+                                    <td className="pv3 pr3 bb b--black-20"> { trainer.firstName} </td>   
+                                    <td className="pv3 pr3 bb b--black-20"> {trainer.lastName}</td>
+                                    <td className="pv3 pr3 bb b--black-20"> {trainer.gender}</td>
+                                    <td className="pv3 pr3 bb b--black-20"> {trainer.age}</td>
+                                    <td className="pv3 pr3 bb bt b--black-20"> {trainer.certificate}</td>
+                                    <td className="pv3 pr3 bb bt b--black-20">
+                                        <button onClick={ () => this.editTrainer(trainer.trainer_id)} className="f6 link dim br1 ba ph3 pv2 mb2 dib mid-gray">Update </button>
+                                        <button style={{marginLeft: "10px"}} onClick={ () => this.deleteTrainer(trainer.trainer_id)} className="f6 link dim br1 ba ph3 pv2 mb2 dib mid-gray">Delete </button>
+                                        <button style={{marginLeft: "10px"}} onClick={ () => this.viewTrainer(trainer.trainer_id)} className="f6 link dim br1 ba ph3 pv2 mb2 dib mid-gray">View </button>
                                     </td>
                               </tr>
                           )
